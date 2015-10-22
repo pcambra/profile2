@@ -206,6 +206,21 @@ class Profile extends ContentEntityBase implements ProfileInterface {
   /**
    * {@inheritdoc}
    */
+  public function getChangedTime() {
+    return $this->get('changed')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setChangedTime($timestamp) {
+    $this->set('changed', $timestamp);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getRevisionCreationTime() {
     return $this->get('revision_timestamp')->value;
   }

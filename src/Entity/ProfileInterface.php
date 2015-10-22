@@ -27,7 +27,7 @@ interface ProfileInterface extends ContentEntityInterface, EntityChangedInterfac
    * @param string $type
    *   The profile type.
    *
-   * @return \Drupal\profile\ProfileInterface
+   * @return \Drupal\profile\Entity\ProfileInterface
    *   The called profile entity.
    */
   public function setType($type);
@@ -43,10 +43,26 @@ interface ProfileInterface extends ContentEntityInterface, EntityChangedInterfac
    * @param int $timestamp
    *   The profile creation timestamp.
    *
-   * @return \Drupal\profile\ProfileInterface
+   * @return \Drupal\profile\Entity\ProfileInterface
    *   The called profile entity.
    */
   public function setCreatedTime($timestamp);
+
+  /**
+   * Returns the profile changed timestamp.
+   */
+  public function getChangedTime();
+
+  /**
+   * Sets the profile changed timestamp.
+   *
+   * @param int $timestamp
+   *   The profile changed timestamp.
+   *
+   * @return \Drupal\profile\Entity\ProfileInterface
+   *   The called profile entity.
+   */
+  public function setChangedTime($timestamp);
 
   /**
    * Returns the profile revision creation timestamp.
@@ -62,7 +78,7 @@ interface ProfileInterface extends ContentEntityInterface, EntityChangedInterfac
    * @param int $timestamp
    *   The UNIX timestamp of when this revision was created.
    *
-   * @return \Drupal\profile\ProfileInterface
+   * @return \Drupal\profile\Entity\ProfileInterface
    *   The called profile entity.
    */
   public function setRevisionCreationTime($timestamp);
@@ -81,7 +97,7 @@ interface ProfileInterface extends ContentEntityInterface, EntityChangedInterfac
    * @param int $uid
    *   The user ID of the revision author.
    *
-   * @return \Drupal\profile\ProfileInterface
+   * @return \Drupal\profile\Entity\ProfileInterface
    *   The called profile entity.
    */
   public function setRevisionAuthorId($uid);
@@ -107,7 +123,7 @@ interface ProfileInterface extends ContentEntityInterface, EntityChangedInterfac
    * @param bool $actvie
    *   TRUE to set this profile to active, FALSE to set it to inactive.
    *
-   * @return \Drupal\profile\ProfileInterface
+   * @return \Drupal\profile\Entity\ProfileInterface
    *   The called profile entity.
    */
   public function setActive($active);
